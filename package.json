@@ -1,7 +1,10 @@
 {
-  "name": "cod-rto-app",
+  "name": "rto-shield",
   "version": "1.0.0",
+  "private": true,
+  "description": "RTO Shield - COD Verification & Fraud Control - WhatsApp OTP, Fake Order Blocker, Prepaid Nudge",
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },

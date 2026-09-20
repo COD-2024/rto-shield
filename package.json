@@ -2,7 +2,6 @@
   "name": "rto-shield",
   "version": "1.0.0",
   "private": true,
-  "description": "RTO Shield - COD Verification & Fraud Control - WhatsApp OTP, Fake Order Blocker, Prepaid Nudge",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,10 +13,5 @@
     "prisma": "^6.16.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"
-  },
-  "allowScripts": {
-    "@prisma/client@6.16.0": true,
-    "@prisma/engines@6.16.0": true,
-    "prisma@6.16.0": true
   }
 }

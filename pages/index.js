@@ -1,3 +1,4 @@
+import link from 'next/link';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -34,6 +35,12 @@ export async function getServerSideProps() {
 export default function Dashboard({ orders, totalOrders, blockedCount, verifiedCount, moneySaved }) {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', background: '#f4f6f9', minHeight: '100vh', padding: '20px' }}>
+{/* Simple Menu */}
+<div style={{ marginBottom: '25px', background: 'white', padding: '15px', borderRadius: '10px' }}>
+  <Link href="/" style={{ marginRight: '20px', textDecoration: 'none', color: '#2563eb', fontWeight: 'bold' }}>Dashboard</Link>
+  <Link href="/weekly" style={{ marginRight: '20px', textDecoration: 'none', color: '#333', fontWeight: 'bold' }}>Weekly Report</Link>
+  <Link href="/monthly" style={{ textDecoration: 'none', color: '#333', fontWeight: 'bold' }}>Monthly Report</Link>
+</div>
       
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
         <div>

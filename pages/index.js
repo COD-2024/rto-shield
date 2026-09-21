@@ -1,4 +1,4 @@
-import link from 'next/link';
+import Link from 'next/Link';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();

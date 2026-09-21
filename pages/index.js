@@ -106,23 +106,48 @@ export default function Dashboard({ orders, totalOrders, highRisk, safeOrders, m
                   </td>
                   <td style={{ padding: '12px 8px', fontSize: '14px', color: '#555' }}>{order.riskReason}</td>
                   <td style={{ padding: '12px 8px' }}>
-                    <button style={{
-                      background: '#16a34a',
-                      color: 'white',
-                      border: 'none',
-                      padding: '6px 12px',
-                      borderRadius: '6px',
-                      marginRight: '6px',
-                      cursor: 'pointer'
-                    }}>Verify</button>
-                    <button style={{
-                      background: '#ef4444',
-                      color: 'white',
-                      border: 'none',
-                      padding: '6px 12px',
-                      borderRadius: '6px',
-                      cursor: 'pointer'
-                    }}>Block</button>
+                    <button 
+  onClick={async () => {
+    await fetch('/api/update-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: order.id, action: 'verify' })
+    });
+    window.location.reload();
+  }}
+  style={{
+    background: '#16a34a',
+    color: 'white',
+    border: 'none',
+    padding: '6px 12px',
+    borderRadius: '6px',
+    marginRight: '6px',
+    cursor: 'pointer'
+  }}
+>
+  Verify
+</button>
+
+<button 
+  onClick={async () => {
+    await fetch('/api/update-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: order.id, action: 'block' })
+    });
+    window.location.reload();
+  }}
+  style={{
+    background: '#ef4444',
+    color: 'white',
+    border: 'none',
+    padding: '6px 12px',
+    borderRadius: '6px',
+    cursor: 'pointer'
+  }}
+>
+  Block
+</button>
                   </td>
                 </tr>
               ))}
